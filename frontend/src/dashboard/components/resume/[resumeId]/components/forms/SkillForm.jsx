@@ -48,7 +48,7 @@ const SkillForm = () => {
                 ...resumeData,
                 skills: skillList, // Use the current skill list for saving
             };
-            await axios.put(`http://localhost:8000/api/v1/resume-update/${userResumeId}`, updatedResume);
+            await axios.put(`https://ai-resume-builder-7yb4.onrender.com/api/v1/resume-update/${userResumeId}`, updatedResume);
             alert('Skills saved successfully!');
         } catch (error) {
             console.error('Error saving skills:', error);

@@ -14,7 +14,7 @@ const EditUserResume = () => {
   // Function to fetch resume data from the backend
   const getResumeData = async () => {
     try {
-      const { data } = await axios.get(`http://localhost:8000/api/v1/resumedata/${userResumeId}`);
+      const { data } = await axios.get(`https://ai-resume-builder-7yb4.onrender.com/api/v1/resumedata/${userResumeId}`);
       setResumeData(data);
       console.log(data);// Set fetched data to state
       setLoading(false);

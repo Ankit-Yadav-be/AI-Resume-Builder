@@ -65,7 +65,7 @@ const EducationForm = () => {
 
             // Make API call to update resume
             const response = await axios.put(
-                `http://localhost:8000/api/v1/resume-update/${userResumeId}`,
+                `https://ai-resume-builder-7yb4.onrender.com/api/v1/resume-update/${userResumeId}`,
                 payload
             );
 

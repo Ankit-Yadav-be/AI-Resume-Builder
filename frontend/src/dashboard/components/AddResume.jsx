@@ -27,7 +27,7 @@ const AddResume = () => {
   const onCreate = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/user-resume",
+        "https://ai-resume-builder-7yb4.onrender.com/api/v1/user-resume",
         {
           userResumeTitle,
           userResumeId,

@@ -16,7 +16,7 @@ const ViewResume = () => {
   const getResumeData = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8000/api/v1/resumedata/${userResumeId}`
+        `https://ai-resume-builder-7yb4.onrender.com/api/v1/resumedata/${userResumeId}`
       );
       setResumeData(data); // Set the fetched resume data
     } catch (error) {

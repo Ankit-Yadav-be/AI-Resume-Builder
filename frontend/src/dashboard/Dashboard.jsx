@@ -17,7 +17,7 @@ const Dashboard = () => {
 
   const fetchResumes = async (email) => {
     try {
-      const response = await axios.get("http://localhost:8000/api/v1/resume-list", {
+      const response = await axios.get("https://ai-resume-builder-7yb4.onrender.com/api/v1/resume-list", {
         params: { userEmail: email },
       });
       setResumeList(response.data.resumes);
