@@ -1,4 +1,3 @@
-// backend/routes/ai.js
 import express from "express";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -21,14 +20,12 @@ const generationConfig = {
 
 router.post("/generate-summary", async (req, res) => {
   try {
-    const { positionTitle } = req.body;
+    const { prompt } = req.body;
 
     const chat = model.startChat({
       generationConfig,
       history: [],
     });
-
-    const prompt = `positionTitle: ${positionTitle}, based on this position title, give me 5-6 bullet points for my resume in HTML format.`;
 
     const result = await chat.sendMessage(prompt);
     const text = await result.response.text();
