@@ -1,9 +1,8 @@
 // backend/routes/ai.js
-const express = require("express");
+import express from "express";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
 const router = express.Router();
-const {
-  GoogleGenerativeAI,
-} = require("@google/generative-ai");
 
 const apiKey = process.env.VITE_GEMINI_API;
 const genAI = new GoogleGenerativeAI(apiKey);
