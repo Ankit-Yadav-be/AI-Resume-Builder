@@ -14,21 +14,22 @@ dbConnection();
 const corsOption = {
   origin: function (origin, callback) {
     const allowedOrigins = [
-      "https://ai-resume-builder-ewdh-git-main-ankit-yadavs-projects-a35f4865.vercel.app/",
+      "https://ai-resume-builder-l2hf.vercel.app",
       "http://localhost:5173",
     ];
 
-    console.log("CORS origin check:", origin);
+    console.log("🌍 Incoming Origin:", origin);
 
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      console.error("Blocked by CORS:", origin);
+      console.error("❌ Blocked by CORS:", origin);
       callback(new Error("Not allowed by CORS"));
     }
   },
   credentials: true,
 };
+
 
 app.use(cors(corsOption));
 app.use(express.json());
