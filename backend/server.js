@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import dbConnection from "./database/connection.js";
 import userResumeRouter from "./route/userResumeRoutes.js";
+import aiRoutes from "./route/ai.js";
 import path from "path";
 const app = express();
 
@@ -18,6 +19,7 @@ const corsOption ={
 app.use(cors(corsOption));
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1", userResumeRouter);
+app.use("/api/ai", aiRoutes);
 
 app.use(express.static(path.join(_dirname,"/frontend/dist")))
 app.get('*',(_,res)=>{
