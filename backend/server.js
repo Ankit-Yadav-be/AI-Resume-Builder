@@ -15,7 +15,7 @@ app.use(express.json());
 const corsOption = {
   origin: function (origin, callback) {
     const allowedOrigins = [
-      "https://my-portfolio-blue-alpha-48.vercel.app/", // ✅ your Vercel frontend
+      "https://my-portfolio-blue-alpha-48.vercel.app", // ✅ your Vercel frontend
       "http://localhost:5173"                      // ✅ local development (optional)
     ];
     
