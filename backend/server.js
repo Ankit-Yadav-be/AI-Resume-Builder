@@ -12,10 +12,22 @@ dotenv.config();
 dbConnection();
 const port = process.env.PORT || 8000;
 app.use(express.json());
-const corsOption ={
-  origin:"https://ai-resume-builder-7yb4.onrender.com",
-  credentials:true
-}
+const corsOption = {
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "https://my-portfolio-blue-alpha-48.vercel.app/", // ✅ your Vercel frontend
+      "http://localhost:5173"                      // ✅ local development (optional)
+    ];
+    
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+};
+
 app.use(cors(corsOption));
 app.use(express.urlencoded({ extended: true }));
 app.use("/api/v1", userResumeRouter);
