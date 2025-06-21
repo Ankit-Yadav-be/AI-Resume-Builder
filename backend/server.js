@@ -14,7 +14,7 @@ dbConnection();
 const corsOption = {
   origin: function (origin, callback) {
     const allowedOrigins = [
-      "https://ai-resume-builder-l2hf.vercel.app",
+      "https://ai-resume-builder-ewdh.vercel.app",
       "http://localhost:5173",
     ];
 
